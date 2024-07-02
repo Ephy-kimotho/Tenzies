@@ -50,6 +50,6 @@ Building the Tenzies game was a rewarding experience that helped me improve my R
 2. **Navigate to the Project Directory**: `cd tenzies-game`
 3. **Install Dependencies**: `npm install`
 4. **Start the Development Server**: `npm start`
-5. **Play the Game**: Open `http://localhost:3000` in your browser.
+5. **Play the Game**: Open `http://localhost:5173` in your browser.
 
 Enjoy the game!
