@@ -1,0 +1,141 @@
+/* === GOOGLE FONTS IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --light-grey: #b8b8b0;
+    --dark-blue: #2b283a;
+
+    --main-bg: #f5f5f5;
+    --btn-bg: #5035ff;
+}
+
+/* === CSS PRESETS === */
+* {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Karla, "sans-serif";
+}
+
+/* === HEADER STYLING === */
+.header {
+    font-size: clamp(1rem, .8rem + 1vw, 2.5rem);
+    color: white;
+    font-weight: bold;
+    background-color: var(--dark-blue);
+    display: grid;
+    place-items: center;
+    width: 100%;
+    letter-spacing:  1.5px;
+    min-height: 10vh;
+}
+
+/* === MAIN SECTION STYLING === */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-bg);
+    min-height: 90vh;
+}
+
+.game--instructions {
+    text-align: center;
+    color: var(--dark-blue);
+    font-size: clamp(1rem, .9rem + 1vw, 2rem);
+    padding-inline: 15px;
+    letter-spacing:  1.5px;
+}
+
+.scoreboard{ 
+    width:80%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.875rem, 0.5rem + 1vw, 1.5rem);
+    letter-spacing: 2px;
+    color: var(--dark-blue);
+}
+
+.dice--container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 500px;
+    gap: 18px;
+}
+
+.die {
+    --length: 65px;
+    flex: 1 1 var(--length);
+    height: var(--length);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    cursor: pointer;
+    box-shadow: 0 4px 4px var(--light-grey);
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    max-width: 900px;
+    gap:20px;
+    justify-content: center;
+    
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--btn-bg);
+    font-size: 1rem;
+    padding: 0.5em 2em;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.btn:active {
+    box-shadow: inset 5px 5px 10px var(--dark-blue);
+    outline: none;
+}
+
+
+@media (min-width: 550px) {
+    .die {
+        --length: 80px;
+    }
+}
+
+@media (min-width: 700px){
+    .game--instructions {
+        max-width: 650px;
+    }
+
+    .buttons{
+        flex-direction: row;
+    }
+
+    .btn{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media(min-width: 1200px){
+    .header{
+        padding-block: 10px;
+    }
+}
