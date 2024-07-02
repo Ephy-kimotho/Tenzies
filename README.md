@@ -11,7 +11,7 @@ Tenzies is a fun and addictive dice game where the goal is to roll the dice unti
 5. **Restart the Game**: After winning, click the "Restart Game" button to start a new game.
 
 ## 🖼️ SCREENSHOT
-![Screenshot](./src/assets/tenzies.png)
+![Screenshot](./src/assests/tenzies.png)
 [View live site](https://tenzies-0a3.netlify.app/)
 
 ## 🛠️ How I Built It
