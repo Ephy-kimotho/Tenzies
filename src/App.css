@@ -100,7 +100,7 @@ html {
     border-radius: 5px;
     color: white;
     background-color: var(--btn-bg);
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 0.5em 2em;
     letter-spacing: 2.5px;
     cursor: pointer;
