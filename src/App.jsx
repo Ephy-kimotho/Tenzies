@@ -1,5 +1,6 @@
 import React from "react";
 import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 import Header from "./components/Header";
 import Die from "./components/Die";
 import { allNewDice, generateDie, formatTime } from "./utils/utils";
@@ -10,7 +11,6 @@ function App() {
   const [tenzies, setTenzies] = React.useState(false);
   const [tempRolls, setTempRolls] = React.useState(0);
   const [startTime, setStartTime] = React.useState(Date.now());
-  const [elapsedTime, setElapsedTime] = React.useState(0);
 
   /* Lazy state initialization to help improve performance */
   const [leastRolls, setLeastRolls] = React.useState(() => {
@@ -31,13 +31,12 @@ function App() {
 
       const endTime = Date.now();
       const currentElapsedTime = endTime - startTime;
-      setElapsedTime(currentElapsedTime);
 
-      if (leastTime === 0 || elapsedTime < leastTime) {
-        setLeastTime(elapsedTime);
+      if (leastTime === 0 || currentElapsedTime < leastTime) {
+        setLeastTime(currentElapsedTime);
       }
     }
-  }, [tenzies, tempRolls, leastRolls, startTime, elapsedTime, leastTime]);
+  }, [tenzies, tempRolls, leastRolls, startTime, leastTime]);
 
   React.useEffect(() => {
     const firstValue = dice[0].value;
@@ -100,9 +99,11 @@ function App() {
     );
   });
 
+  const { width, height } = useWindowSize();
+
   return (
     <>
-      {tenzies && <Confetti width={1200} />}
+      {tenzies && <Confetti width={width} height={height} />}
 
       <Header />
       <main>
